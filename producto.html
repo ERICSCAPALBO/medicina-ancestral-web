@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Información del producto seleccionado en Medicina Ancestral."
+  >
+
+  <title>Producto | Medicina Ancestral</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header-principal">
+    <a href="./index.html" class="logo">
+      <img
+        src="./img/logo.png"
+        alt="Medicina Ancestral"
+      >
+    </a>
+
+    <nav aria-label="Navegación principal">
+      <a href="./index.html">Inicio</a>
+      <a href="./tienda.html">Tienda</a>
+      <a href="./pages/blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- NAVEGACIÓN SECUNDARIA -->
+    <div class="producto-migas">
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <span aria-hidden="true">/</span>
+
+      <a href="./tienda.html">
+        Tienda
+      </a>
+
+      <span aria-hidden="true">/</span>
+
+      <span id="miga-producto">
+        Producto
+      </span>
+    </div>
+
+    <!-- PRODUCTO DINÁMICO -->
+    <section
+      class="producto-detalle"
+      id="producto-detalle"
+      aria-live="polite"
+    >
+      <p class="producto-cargando">
+        Cargando producto...
+      </p>
+    </section>
+
+    <!-- ORIENTACIÓN -->
+    <section class="orientacion-producto">
+      <div class="orientacion-contenido">
+        <h2>
+          ¿Necesitás orientación?
+        </h2>
+
+        <p>
+          Contanos qué estás buscando acompañar y te ayudamos
+          a elegir una opción adecuada para vos.
+        </p>
+
+        <a
+          href="https://wa.me/5491138456670?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20sobre%20un%20producto."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-orientacion"
+        >
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+<footer class="footer-sitio">
+
+  <div class="footer-contenido">
+
+    <!-- IDENTIDAD -->
+    <div class="footer-marca">
+      <a
+        href="./index.html"
+        class="footer-logo"
+        aria-label="Ir al inicio de Medicina Ancestral"
+      >
+        <img
+          src="./img/logo.png"
+          alt="Medicina Ancestral"
+        >
+      </a>
+
+      <p class="footer-frase">
+        Bienestar natural con acompañamiento consciente.
+      </p>
+
+      <p>
+        Productos seleccionados, educación y orientación
+        personalizada para ayudarte a elegir de manera responsable.
+      </p>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav
+      class="footer-navegacion"
+      aria-label="Navegación del pie de página"
+    >
+      <h2>Explorar</h2>
+
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a href="./tienda.html">
+        Tienda
+      </a>
+
+      <a href="./pages/blog.html">
+        Blog
+      </a>
+    </nav>
+
+    <!-- CONTACTO -->
+    <div class="footer-contacto">
+      <h2>Estamos para orientarte</h2>
+
+      <p>
+        Contanos qué estás buscando acompañar y te ayudamos
+        a conocer las opciones disponibles.
+      </p>
+
+      <a
+        href="https://wa.me/5491138456670?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20sobre%20los%20productos%20de%20Medicina%20Ancestral."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-whatsapp"
+      >
+        Consultar por WhatsApp
+      </a>
+
+      <a
+        href="https://www.instagram.com/medicinaancestralarg/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-instagram"
+      >
+        @medicinaancestralarg
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-legal">
+
+  <div class="footer-legal-textos">
+    <p>
+      © Medicina Ancestral. Todos los derechos reservados.
+    </p>
+
+    <p>
+      La información de este sitio es educativa y no reemplaza
+      el asesoramiento de profesionales de la salud o veterinarios.
+    </p>
+  </div>
+
+  <p class="footer-autor">
+    Identidad visual, diseño y desarrollo web por 
+    <a
+      href="https://www.instagram.com/ericcapalbo/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ver perfil de Eric Capalbo"
+    >
+      Eric Capalbo
+    </a>
+  </p>
+
+</div>
+
+</footer>
+
+  <!-- BOTÓN FLOTANTE DEL CARRITO -->
+  <button
+    type="button"
+    class="carrito-flotante"
+    id="abrir-carrito"
+    aria-label="Abrir carrito de compras"
+  >
+    <span aria-hidden="true">🛒</span>
+    <span id="contador-carrito">0</span>
+  </button>
+
+  <!-- CARRITO -->
+  <aside
+    class="carrito-panel"
+    id="carrito-panel"
+    aria-label="Carrito de compras"
+    aria-hidden="true"
+  >
+    <div class="carrito-header">
+      <h2>Mi carrito</h2>
+
+      <button
+        type="button"
+        id="cerrar-carrito"
+        aria-label="Cerrar carrito"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div
+      id="carrito-items"
+      class="carrito-items"
+      aria-live="polite"
+    ></div>
+
+    <div class="carrito-footer">
+      <p>
+        Total:
+        <strong id="carrito-total">$0</strong>
+      </p>
+
+      <div class="carrito-acciones">
+        <button
+          type="button"
+          id="finalizar-whatsapp"
+          class="btn-whatsapp"
+        >
+          Finalizar por WhatsApp
+        </button>
+
+        <button
+          type="button"
+          id="vaciar-carrito"
+          class="btn-vaciar-carrito"
+        >
+          Vaciar carrito
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <div
+    class="carrito-overlay"
+    id="carrito-overlay"
+  ></div>
+
+  <div
+    class="notificacion"
+    id="notificacion"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <script src="./js/helpers.js"></script>
+  <script src="./js/catalogo-config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/productos.js"></script>
+  <script src="./js/carrito.js"></script>
+  <script src="./js/producto.js"></script>
+
+</body>
+</html>
