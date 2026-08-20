@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "titulo": "CBD: una guía para comprenderlo antes de elegir",
+    "slug": "cbd-guia-para-comprenderlo",
+    "categoria": "CBD",
+    "resumen": "Una introducción clara para conocer qué es el CBD, qué tipos de productos existen y qué aspectos conviene considerar antes de elegir.",
+    "imagen": "./img/blog/cbd-guia.webp",
+    "fecha": "2026-08-12",
+    "tiempoLectura": "6 min",
+    "destacado": true,
+    "visible": true,
+    "introduccion": "El CBD forma parte de una variedad creciente de productos orientados al bienestar. Sin embargo, concentraciones, formulaciones y formas de uso pueden generar muchas dudas al momento de elegir.",
+    "secciones": [
+      {
+        "titulo": "¿Qué es el CBD?",
+        "parrafos": [
+          "El cannabidiol, conocido como CBD, es uno de los compuestos presentes naturalmente en la planta de cannabis.",
+          "Los productos disponibles pueden diferenciarse por concentración, composición y presencia de otros cannabinoides, por lo que no todas las formulaciones son iguales."
+        ]
+      },
+      {
+        "titulo": "No existe una única opción para todas las personas",
+        "parrafos": [
+          "La elección depende de factores individuales, del tipo de producto y del objetivo de bienestar buscado.",
+          "Por eso resulta importante evitar recomendaciones universales y comprender primero las características de cada alternativa."
+        ]
+      },
+      {
+        "titulo": "¿Qué conviene tener en cuenta?",
+        "parrafos": [
+          "Es importante observar la concentración declarada, el volumen del producto, su composición y las indicaciones del elaborador.",
+          "En personas que utilizan medicación, durante embarazo o lactancia, en niños, adultos mayores o ante patologías previas, recomendamos consultar con un profesional antes de incorporarlo."
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": 2,
+    "titulo": "Adaptógenos: qué son y cómo conocer sus diferencias",
+    "slug": "adaptogenos-que-son",
+    "categoria": "Adaptógenos",
+    "resumen": "Reishi, Melena de León, Cordyceps y otros adaptógenos tienen características diferentes. Te contamos cómo empezar a conocerlos.",
+    "imagen": "./img/blog/adaptogenos.webp",
+    "fecha": "2026-08-10",
+    "tiempoLectura": "5 min",
+    "destacado": true,
+    "visible": true,
+    "introduccion": "El término adaptógeno aparece cada vez con mayor frecuencia dentro del bienestar natural, pero engloba plantas y hongos con características muy diferentes entre sí.",
+    "secciones": [
+      {
+        "titulo": "¿Qué entendemos por adaptógenos?",
+        "parrafos": [
+          "Se denomina adaptógenos a determinadas plantas y hongos utilizados tradicionalmente dentro de distintas culturas y sistemas de bienestar.",
+          "Cada especie presenta una composición particular, por lo que no tiene sentido hablar de todos los adaptógenos como si fueran un único producto."
+        ]
+      },
+      {
+        "titulo": "Algunos de los más conocidos",
+        "parrafos": [
+          "Reishi, Melena de León, Cordyceps, Chaga, Maitake, Tremella y Ashwagandha forman parte de las opciones que pueden encontrarse actualmente.",
+          "También pueden presentarse molidos o en extractos, lo que cambia la forma en que se incorporan a una rutina."
+        ]
+      },
+      {
+        "titulo": "Elegir con información",
+        "parrafos": [
+          "Antes de incorporar un adaptógeno conviene conocer qué producto estamos utilizando, su procedencia, presentación y recomendaciones de uso.",
+          "Si existe medicación, embarazo, lactancia o alguna condición de salud previa, sugerimos consultar con un profesional."
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "titulo": "Cosmética natural: cómo construir una rutina más consciente",
+    "slug": "cosmetica-natural-rutina-consciente",
+    "categoria": "Cosmética natural",
+    "resumen": "Shampoos sólidos, jabones, tónicos y emulsiones pueden formar parte de una rutina más simple y consciente.",
+    "imagen": "./img/blog/cosmetica-natural.webp",
+    "fecha": "2026-08-08",
+    "tiempoLectura": "4 min",
+    "destacado": true,
+    "visible": true,
+    "introduccion": "Elegir cosmética natural no significa utilizar muchos productos. Una rutina consciente también puede partir de comprender qué necesita nuestra piel o cabello y seleccionar solamente lo necesario.",
+    "secciones": [
+      {
+        "titulo": "Empezar por una rutina simple",
+        "parrafos": [
+          "Antes de sumar nuevos productos conviene observar qué utilizamos actualmente y qué función cumple cada uno.",
+          "Una rutina sencilla suele ser más fácil de mantener y también permite identificar mejor cómo responde nuestra piel o cabello."
+        ]
+      },
+      {
+        "titulo": "Productos sólidos y alternativas naturales",
+        "parrafos": [
+          "Shampoos y acondicionadores sólidos pueden ayudar a reducir envases y simplificar la rutina de higiene.",
+          "Jabones, emulsiones, tónicos y otros productos naturales pueden complementarla según las necesidades individuales."
+        ]
+      },
+      {
+        "titulo": "Natural también requiere responsabilidad",
+        "parrafos": [
+          "El origen natural de un ingrediente no significa automáticamente que sea adecuado para todas las personas.",
+          "Ante piel sensible, alergias o reacciones previas, es recomendable revisar los ingredientes y realizar una prueba localizada antes del uso habitual."
+        ]
+      }
+    ]
+  }
+]

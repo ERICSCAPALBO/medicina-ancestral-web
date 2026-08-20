@@ -12,18 +12,28 @@ function crearCardProducto(producto) {
     : "";
 
   return `
-    <article class="card" data-id="${producto.id}">
+    <article
+      class="card"
+      data-id="${producto.id}"
+      role="listitem"
+      aria-labelledby="producto-titulo-${producto.id}"
+    >
       <div class="card-imagen-container">
         ${etiquetaOferta}
 
-        <img
-          src="${producto.imagen}"
-          alt="${producto.nombre}"
-          loading="lazy"
-        >
+      <img
+        src="${producto.imagen}"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      >
       </div>
 
-      <h3>${producto.nombre}</h3>
+      <h3
+        id="producto-titulo-${producto.id}"
+      >
+        ${producto.nombre}
+      </h3>
 
       <p class="descripcion">
         <span class="texto-corto">
@@ -38,6 +48,7 @@ function crearCardProducto(producto) {
           type="button"
           class="leer-mas"
           aria-expanded="false"
+          aria-label="Leer más sobre ${producto.nombre}"
         >
           Leer más
         </button>
@@ -121,6 +132,10 @@ function inicializarEventosProductos() {
 
 function alternarDescripcion(boton) {
   const descripcion = boton.closest(".descripcion");
+  const card = boton.closest(".card");
+
+
+  const tituloProducto = card?.querySelector("h3")?.textContent.trim() || "este producto";
   const textoLargo = descripcion.querySelector(".texto-largo");
 
   const estaAbierto = textoLargo.classList.contains("activo");

@@ -9,8 +9,9 @@
   >
 
   <meta
-    name="description"
-    content="Información del producto seleccionado en Medicina Ancestral."
+  name="description"
+  id="meta-description-producto"
+  content="Información del producto seleccionado en Medicina Ancestral."
   >
 
   <title>Producto | Medicina Ancestral</title>
@@ -20,23 +21,92 @@
 
 <body>
 
+  <a
+  href="#contenido-principal"
+  class="salto-contenido"
+>
+  Saltar al contenido principal
+</a>
+
+  <a
+  href="#contenido-principal"
+  class="salto-contenido"
+  >
+  Saltar al contenido principal
+  </a>
+
   <!-- HEADER -->
   <header class="header-principal">
-    <a href="./index.html" class="logo">
-      <img
-        src="./img/logo.png"
-        alt="Medicina Ancestral"
+
+  <a
+  href="./index.html"
+  class="logo"
+  aria-label="Ir al inicio de Medicina Ancestral"
+  >
+  <img
+    src="./img/logo.png"
+    alt=""
+    decoding="async"
+  >
+  </a>
+
+  <button
+    type="button"
+    class="menu-toggle"
+    id="menu-toggle"
+    aria-expanded="false"
+    aria-controls="header-menu"
+    aria-label="Abrir menú de navegación"
+  >
+    <span class="menu-toggle-linea"></span>
+    <span class="menu-toggle-linea"></span>
+    <span class="menu-toggle-linea"></span>
+  </button>
+
+  <div
+    class="header-menu"
+    id="header-menu"
+  >
+
+    <nav
+      class="nav-principal"
+      aria-label="Navegación principal"
+    >
+
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a
+        href="./tienda.html"
+        aria-current="page"
       >
+        Tienda
+      </a>
+
+      <a href="./pages/blog.html">
+        Blog
+      </a>
+
+    </nav>
+
+    <a
+      href="https://wa.me/5491138456670?text=Hola%2C%20estoy%20viendo%20un%20producto%20en%20la%20web%20y%20quisiera%20recibir%20orientaci%C3%B3n."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="header-asesoramiento"
+    >
+      Quiero asesoramiento
     </a>
 
-    <nav aria-label="Navegación principal">
-      <a href="./index.html">Inicio</a>
-      <a href="./tienda.html">Tienda</a>
-      <a href="./pages/blog.html">Blog</a>
-    </nav>
-  </header>
+  </div>
 
-  <main>
+</header>
+
+  <main
+  id="contenido-principal"
+  tabindex="-1"
+  >
 
     <!-- NAVEGACIÓN SECUNDARIA -->
     <div class="producto-migas">
@@ -106,7 +176,8 @@
       >
         <img
           src="./img/logo.png"
-          alt="Medicina Ancestral"
+          alt=""
+          loading="lazy"
         >
       </a>
 
@@ -211,12 +282,14 @@
   </button>
 
   <!-- CARRITO -->
-  <aside
-    class="carrito-panel"
-    id="carrito-panel"
-    aria-label="Carrito de compras"
-    aria-hidden="true"
-  >
+<aside
+  class="carrito-panel"
+  id="carrito-panel"
+  aria-label="Carrito de compras"
+  aria-hidden="true"
+  inert
+>
+
     <div class="carrito-header">
       <h2>Mi carrito</h2>
 
@@ -280,6 +353,7 @@
   <script src="./js/productos.js"></script>
   <script src="./js/carrito.js"></script>
   <script src="./js/producto.js"></script>
+  <script src="./js/menu.js"></script>
 
 </body>
 </html>

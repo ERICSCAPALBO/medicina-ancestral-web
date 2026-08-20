@@ -17,6 +17,15 @@
     Medicina Ancestral | Bienestar natural con acompañamiento consciente
   </title>
 
+  <!-- Precarga de la imagen principal del hero -->
+  <link
+    rel="preload"
+    as="image"
+    href="./img/hero-img.webp"
+    type="image/webp"
+    fetchpriority="high"
+  >
+
   <link
     rel="stylesheet"
     href="./css/style.css"
@@ -24,51 +33,91 @@
 </head>
 <body>
 
+  <a
+  href="#contenido-principal"
+  class="salto-contenido"
+  >
+    Saltar al contenido principal
+  </a>
+
     <!-- 🌿 NAVBAR -->
     <header class="header-principal">
 
+  <!-- LOGO -->
   <a
-    href="./index.html"
-    class="logo"
-    aria-label="Medicina Ancestral - Inicio"
+  href="./index.html"
+  class="logo"
+  aria-label="Ir al inicio de Medicina Ancestral"
+>
+  <img
+    src="./img/logo.png"
+    alt=""
+    decoding="async"
   >
-    <img
-      src="./img/logo.png"
-      alt="Medicina Ancestral"
-    >
-  </a>
+</a>
 
-  <nav
-    class="nav-principal"
-    aria-label="Navegación principal"
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <button
+    type="button"
+    class="menu-toggle"
+    id="menu-toggle"
+    aria-expanded="false"
+    aria-controls="header-menu"
+    aria-label="Abrir menú de navegación"
   >
+    <span class="menu-toggle-linea"></span>
+    <span class="menu-toggle-linea"></span>
+    <span class="menu-toggle-linea"></span>
+  </button>
+
+
+  <!-- CONTENIDO DEL MENÚ -->
+  <div
+    class="header-menu"
+    id="header-menu"
+  >
+
+    <nav
+      class="nav-principal"
+      aria-label="Navegación principal"
+    >
+
+      <a
+        href="./index.html"
+        aria-current="page"
+      >
+        Inicio
+      </a>
+
+      <a href="./tienda.html">
+        Tienda
+      </a>
+
+      <a href="./pages/blog.html">
+        Blog
+      </a>
+
+    </nav>
+
+
     <a
-      href="./index.html"
-      aria-current="page"
+      href="https://wa.me/5491138456670?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20de%20Medicina%20Ancestral."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="header-asesoramiento"
     >
-      Inicio
+      Quiero asesoramiento
     </a>
 
-    <a href="./tienda.html">
-      Tienda
-    </a>
-
-    <a href="./pages/blog.html">
-      Blog
-    </a>
-  </nav>
-
-  <a
-    href="https://wa.me/549XXXXXXXXX?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20de%20Medicina%20Ancestral."
-    target="_blank"
-    rel="noopener noreferrer"
-    class="header-asesoramiento"
-  >
-    Asesoramiento
-  </a>
+  </div>
 
 </header>
 
+<main
+  id="contenido-principal"
+  tabindex="-1"
+>
   <section class="hero">
 
   <div class="hero-contenido">
@@ -99,7 +148,7 @@
       </a>
 
       <a
-        href="https://wa.me/549XXXXXXXXX?text=Hola%2C%20no%20s%C3%A9%20qu%C3%A9%20producto%20elegir%20y%20quisiera%20recibir%20orientaci%C3%B3n."
+        href="https://wa.me/5491138456670?text=Hola%2C%20no%20s%C3%A9%20qu%C3%A9%20producto%20elegir%20y%20quisiera%20recibir%20orientaci%C3%B3n."
         target="_blank"
         rel="noopener noreferrer"
         class="hero-btn hero-btn-secundario"
@@ -401,7 +450,7 @@
     </div>
 
     <a
-      href="https://wa.me/549XXXXXXXXX?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20para%20elegir%20un%20producto."
+      href="https://wa.me/5491138456670?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20para%20elegir%20un%20producto."
       target="_blank"
       rel="noopener noreferrer"
       class="necesidades-ayuda-btn"
@@ -607,8 +656,6 @@
 
 </section>
 
-
-</section>
     <!-- 🌟 PRODUCTOS DESTACADOS -->
   <section
   class="productos productos-destacados-home"
@@ -794,7 +841,7 @@
     <div class="acompanamiento-cta-acciones">
 
       <a
-        href="https://wa.me/549XXXXXXXXX?text=Hola%2C%20es%20mi%20primera%20vez%20y%20quisiera%20recibir%20orientaci%C3%B3n%20para%20elegir%20un%20producto."
+        href="https://wa.me/5491138456670?text=Hola%2C%20es%20mi%20primera%20vez%20y%20quisiera%20recibir%20orientaci%C3%B3n%20para%20elegir%20un%20producto."
         target="_blank"
         rel="noopener noreferrer"
         class="acompanamiento-btn-principal"
@@ -989,71 +1036,55 @@
 
 </section>
 
-    <!-- 📖 BLOG -->
-    <section class="blog">
+<!-- ==================================================
+     BLOG EN LANDING
+================================================== -->
 
-  <h2>Aprende con nosotros</h2>
+<section class="blog-home">
 
-  <div class="blog-container">
+  <div class="blog-home-encabezado">
 
-    <!-- Artículo 1 -->
+    <div>
 
-    <article class="blog-card">
-
-      <img src="./img/blog/reishi-beneficios.webp" alt="Beneficios del Reishi">
-
-      <h3>Beneficios del Reishi</h3>
-
-      <p>
-        Descubre por qué es conocido como el hongo de la inmortalidad.
+      <p class="seccion-eyebrow">
+        Educación natural
       </p>
 
-      <button>
-        Leer artículo
-      </button>
-
-    </article>
-
-    <!-- Artículo 2 -->
-
-    <article class="blog-card">
-
-      <img src="./img/blog/melena-cerebro.webp" alt="Melena de León">
-
-      <h3>Melena de León y concentración</h3>
+      <h2>
+        Aprendé para elegir
+        con mayor conciencia
+      </h2>
 
       <p>
-        Aprende cómo este adaptógeno acompaña la función cognitiva.
+        Información clara sobre bienestar natural,
+        productos, adaptógenos, cosmética y prácticas
+        ancestrales para comprender mejor cada alternativa.
       </p>
 
-      <button>
-        Leer artículo
-      </button>
+    </div>
 
-    </article>
-
-    <!-- Artículo 3 -->
-
-    <article class="blog-card">
-
-      <img src="./img/blog/cbd-natural.webp" alt="CBD">
-
-      <h3>¿Qué es el CBD?</h3>
-
-      <p>
-        Una guía para entender este compuesto natural.
-      </p>
-
-      <button>
-        Leer artículo
-      </button>
-
-    </article>
+    <a
+      href="./pages/blog.html"
+      class="blog-home-ver-todos"
+    >
+      Ver todos los artículos →
+    </a>
 
   </div>
 
-    </section>
 
+  <div
+    class="blog-home-grid"
+    id="blog-home-articulos"
+  >
+    <p class="blog-home-cargando">
+      Cargando artículos...
+    </p>
+  </div>
+
+</section>
+
+</main>
 
 <footer class="footer-sitio">
 
@@ -1068,7 +1099,8 @@
       >
         <img
           src="./img/logo.png"
-          alt="Medicina Ancestral"
+          alt=""
+          loading="lazy"
         >
       </a>
 
@@ -1174,13 +1206,14 @@
   id="carrito-panel"
   aria-label="Carrito de compras"
   aria-hidden="true"
+  inert
 >
   
   <div class="carrito-header">
     
     <h2>Mi carrito</h2>
 
-    <button id="cerrar-carrito">✕</button>
+    <button type="button" id="cerrar-carrito" aria-label="Cerrar carrito">✕</button>
   
   </div>
 
@@ -1235,6 +1268,8 @@
   <script src="./js/productos.js"></script>
   <script src="./js/carrito.js"></script>
   <script src="./js/main.js"></script>
+  <script src="./js/blog-home.js"></script>
+  <script src="./js/menu.js"></script>
 
 </body>
 

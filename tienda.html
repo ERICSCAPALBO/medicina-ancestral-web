@@ -20,26 +20,85 @@
 
 <body>
 
+  <a
+  href="#contenido-principal"
+  class="salto-contenido"
+  >
+  Saltar al contenido principal
+  </a>
+
   <!-- HEADER -->
   <header class="header-principal">
-    <a href="./index.html" class="logo">
-      <img
-        src="./img/logo.png"
-        alt="Medicina Ancestral"
-      >
-    </a>
+
+  <a
+    href="./index.html"
+    class="logo"
+    aria-label="Ir al inicio de Medicina Ancestral"
+  >
+    <img
+      src="./img/logo.png"
+      alt=""
+      decoding="async"
+    >
+  </a>
+
+  <button
+    type="button"
+    class="menu-toggle"
+    id="menu-toggle"
+    aria-expanded="false"
+    aria-controls="header-menu"
+    aria-label="Abrir menú de navegación"
+  >
+    <span class="menu-toggle-linea"></span>
+    <span class="menu-toggle-linea"></span>
+    <span class="menu-toggle-linea"></span>
+  </button>
+
+  <div
+    class="header-menu"
+    id="header-menu"
+  >
 
     <nav
-  class="nav-principal"
-  aria-label="Navegación principal"
->
-      <a href="./index.html">Inicio</a>
-      <a href="./tienda.html" aria-current="page">Tienda</a>
-      <a href="./pages/blog.html">Blog</a>
-    </nav>
-  </header>
+      class="nav-principal"
+      aria-label="Navegación principal"
+    >
 
-  <main>
+      <a href="./index.html">
+        Inicio
+      </a>
+
+      <a
+        href="./tienda.html"
+        aria-current="page"
+      >
+        Tienda
+      </a>
+
+      <a href="./pages/blog.html">
+        Blog
+      </a>
+
+    </nav>
+
+    <a
+      href="https://wa.me/5491138456670?text=Hola%2C%20quisiera%20recibir%20orientaci%C3%B3n%20para%20elegir%20un%20producto."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="header-asesoramiento"
+    >
+      Quiero asesoramiento
+    </a>
+
+  </div>
+
+</header>
+
+<main
+  id="contenido-principal"
+  tabindex="-1"
+>
 
     <!-- PRESENTACIÓN DE LA TIENDA -->
     <section class="tienda-hero">
@@ -59,11 +118,15 @@
     </section>
 
     <!-- CATÁLOGO -->
-    <section class="productos tienda-productos" id="productos">
+    <section
+      class="productos tienda-productos"
+      id="productos"
+      aria-labelledby="titulo-catalogo"
+    >
       <div class="seccion-encabezado">
-        <h2>Catálogo completo</h2>
+        <h2 id="titulo-catalogo">Catálogo completo</h2>
 
-        <p>
+        <p id="ayuda-buscador-catalogo">
           Buscá por nombre, categoría, descripción o palabra clave.
         </p>
       </div>
@@ -85,10 +148,10 @@
   <aside
     class="panel-filtros"
     id="panel-filtros"
-    aria-label="Opciones del catálogo"
+    aria-labelledby="titulo-panel-filtros"
   >
     <div class="panel-filtros-header">
-      <h3>Filtrar productos</h3>
+      <h3 id="titulo-panel-filtros">Filtrar productos</h3>
 
       <button
         type="button"
@@ -106,7 +169,10 @@
         Ordenar por
       </label>
 
-      <select id="ordenar-productos">
+      <select 
+      id="ordenar-productos"
+      aria-controls="productos-container"
+      >
         <option value="recomendados">
           Recomendados
         </option>
@@ -130,16 +196,22 @@
     </div>
 
     <!-- CATEGORÍAS DINÁMICAS -->
-    <div class="categorias-panel">
-  <p class="categorias-panel-titulo">
+ <div class="categorias-panel">
+
+  <h4
+    class="categorias-panel-titulo"
+    id="titulo-categorias"
+  >
     Categorías
-  </p>
+  </h4>
 
   <div
     class="filtros"
     id="filtros-categorias"
-    aria-label="Filtrar productos por categoría"
+    role="group"
+    aria-labelledby="titulo-categorias"
   ></div>
+
 </div>
 
 <div
@@ -147,15 +219,21 @@
   id="subcategorias-panel"
   hidden
 >
-  <p class="subcategorias-panel-titulo">
+
+  <h4
+    class="subcategorias-panel-titulo"
+    id="titulo-subcategorias"
+  >
     Subcategorías
-  </p>
+  </h4>
 
   <div
     class="filtros-subcategorias"
     id="filtros-subcategorias"
-    aria-label="Filtrar productos por subcategoría"
+    role="group"
+    aria-labelledby="titulo-subcategorias"
   ></div>
+
 </div>
 
     
@@ -164,7 +242,11 @@
   <!-- ÁREA PRINCIPAL -->
   <div class="catalogo-principal">
 
-  <div class="buscador-productos">
+  <div 
+    class="buscador-productos"
+    role="search"
+    aria-label="Buscar en el catálogo"
+  >
     <label for="buscador">
       Buscar productos
     </label>
@@ -174,31 +256,47 @@
       id="buscador"
       placeholder="Ejemplo: Reishi, CBD, jabón o masajes"
       autocomplete="off"
+      spellcheck="false"
+      enterkeyhint="search"
+      aria-describedby="ayuda-buscador-catalogo"
+      aria-controls="productos-container"
     >
   </div>
 
-  <p
-    class="resultados-texto"
-    id="resultados-texto"
-    aria-live="polite"
-  ></p>
+    <p
+      class="resultados-texto"
+      id="resultados-texto"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </p>
 
   <div
-    class="productos-container"
-    id="productos-container"
-  ></div>
+  class="productos-container"
+  id="productos-container"
+  role="list"
+  aria-labelledby="titulo-catalogo"
+  aria-describedby="resultados-texto"
+  >
+  </div>
 
   <div class="paginacion-catalogo">
     <p
-      class="paginacion-texto"
-      id="paginacion-texto"
-      aria-live="polite"
-    ></p>
+    class="paginacion-texto"
+    id="paginacion-texto"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    >
+    </p>
 
     <button
       type="button"
       class="cargar-mas-btn"
       id="cargar-mas-productos"
+      aria-controls="productos-container"
+      aria-describedby="paginacion-texto"
     >
       Ver más productos
     </button>
@@ -213,6 +311,7 @@
 <div
   class="filtros-overlay"
   id="filtros-overlay"
+  aria-hidden="true"
 ></div>
 
 </section>
@@ -254,7 +353,8 @@
       >
         <img
           src="./img/logo.png"
-          alt="Medicina Ancestral"
+          alt=""
+          loading="lazy"
         >
       </a>
 
@@ -361,11 +461,12 @@
 
   
   <!-- CARRITO LATERAL -->
-  <aside
+<aside
   class="carrito-panel"
   id="carrito-panel"
   aria-label="Carrito de compras"
   aria-hidden="true"
+  inert
 >
     <div class="carrito-header">
       <h2>Mi carrito</h2>
@@ -436,6 +537,7 @@
   <script src="./js/filtros.js"></script>
   <script src="./js/ui-tienda.js"></script>
   <script src="./js/tienda.js"></script>
+  <script src="./js/menu.js"></script>
 
 </body>
 </html>

@@ -56,6 +56,7 @@ function renderizarFiltrosCategorias(
       class="filtro-btn activo"
       data-categoria="todos"
       aria-pressed="true"
+      aria-controls="productos-container"
     >
       <span>Todos</span>
 
@@ -73,6 +74,7 @@ function renderizarFiltrosCategorias(
           class="filtro-btn"
           data-categoria="${categoria.slug}"
           aria-pressed="false"
+          aria-controls="productos-container"
         >
           <span>${categoria.nombre}</span>
 
@@ -172,6 +174,7 @@ function renderizarFiltrosSubcategorias(
       class="subfiltro-btn activo"
       data-subcategoria="todas"
       aria-pressed="true"
+      aria-controls="productos-container"
     >
       <span>Todas</span>
 
@@ -189,6 +192,7 @@ function renderizarFiltrosSubcategorias(
           class="subfiltro-btn"
           data-subcategoria="${subcategoria.slug}"
           aria-pressed="false"
+          aria-controls="productos-container"
         >
           <span>${subcategoria.nombre}</span>
 
@@ -275,6 +279,72 @@ function ordenarProductos(productos, criterio) {
 }
 
 /* ==================================================
+   OPCIONES ESPECIALES DE ORDENAMIENTO
+================================================== */
+
+function configurarOpcionesOrdenEspeciales(
+  productos,
+  selector
+) {
+
+  const opcionNovedades =
+    selector.querySelector(
+      'option[value="novedades"]'
+    );
+
+
+  const opcionOfertas =
+    selector.querySelector(
+      'option[value="ofertas"]'
+    );
+
+
+  const hayNovedades =
+    productos.some(
+      (producto) =>
+        producto.nuevo === true
+    );
+
+
+  const hayOfertas =
+    productos.some(
+      (producto) =>
+        producto.oferta === true
+    );
+
+
+  /*
+    Si no hay novedades,
+    quitamos esa opción del selector.
+  */
+
+  if (
+    !hayNovedades &&
+    opcionNovedades
+  ) {
+
+    opcionNovedades.remove();
+
+  }
+
+
+  /*
+    Si no hay ofertas,
+    quitamos esa opción del selector.
+  */
+
+  if (
+    !hayOfertas &&
+    opcionOfertas
+  ) {
+
+    opcionOfertas.remove();
+
+  }
+
+}
+
+/* ==================================================
    BOTONES ACTIVOS
 ================================================== */
 
@@ -347,6 +417,15 @@ function inicializarBuscadorYFiltros(productos) {
   }
 
   /* ================================================
+   CONFIGURAR OPCIONES DE ORDENAMIENTO
+  ================================================ */
+
+  configurarOpcionesOrdenEspeciales(
+    productos,
+    ordenarSelector
+  );
+
+  /* ================================================
      LEER FILTROS DESDE LA URL
   ================================================ */
 
@@ -364,6 +443,9 @@ function inicializarBuscadorYFiltros(productos) {
   const subcategoriaURL =
     parametrosURL.get("subcategoria") || "todas";
 
+  const ordenURL =
+    parametrosURL.get("orden") || "recomendados";
+
   let textoBuscado =
     normalizarTexto(busquedaURL);
 
@@ -373,8 +455,19 @@ function inicializarBuscadorYFiltros(productos) {
   let subcategoriaSeleccionada =
     subcategoriaURL;
 
+  const criteriosOrdenValidos = [
+  ...ordenarSelector.options
+].map(
+  (opcion) => opcion.value
+);
+
+
   let criterioOrden =
-    "recomendados";
+    criteriosOrdenValidos.includes(
+      ordenURL
+    )
+      ? ordenURL
+      : "recomendados";
 
   /* ================================================
      MOSTRAR BÚSQUEDA DE LA URL EN EL INPUT
@@ -382,6 +475,13 @@ function inicializarBuscadorYFiltros(productos) {
 
   buscador.value = busquedaURL;
 
+
+  /* ================================================
+    MOSTRAR ORDEN DE LA URL EN EL SELECT
+  ================================================ */
+
+  ordenarSelector.value =
+    criterioOrden;
   /* ================================================
      RENDERIZAR CATEGORÍAS
   ================================================ */
@@ -390,6 +490,20 @@ function inicializarBuscadorYFiltros(productos) {
     productos,
     filtrosContenedor
   );
+
+
+/* ================================================
+   SANEAR SUBCATEGORÍA SIN CATEGORÍA
+================================================ */
+
+if (
+  categoriaSeleccionada === "todos"
+) {
+
+  subcategoriaSeleccionada =
+    "todas";
+
+}
 
   /* ================================================
      ACTIVAR CATEGORÍA RECIBIDA POR URL
@@ -487,6 +601,18 @@ function inicializarBuscadorYFiltros(productos) {
       );
     }
 
+    if (
+      criterioOrden !==
+      "recomendados"
+  ) {
+
+    parametros.set(
+      "orden",
+      criterioOrden
+    );
+
+}
+
     const nuevaURL =
       parametros.toString()
         ? `${window.location.pathname}?${parametros.toString()}`
@@ -498,6 +624,13 @@ function inicializarBuscadorYFiltros(productos) {
       nuevaURL
     );
   }
+
+  /*
+    Limpiamos parámetros inválidos
+    que hayan llegado desde la URL.
+  */
+
+  actualizarURLFiltros();
 
   /* ================================================
      APLICAR FILTROS
@@ -618,10 +751,16 @@ function inicializarBuscadorYFiltros(productos) {
   ordenarSelector.addEventListener(
     "change",
     (evento) => {
+
       criterioOrden =
         evento.target.value;
 
+
+      actualizarURLFiltros();
+
+
       aplicarFiltros(true);
+
     }
   );
 
